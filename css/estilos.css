@@ -1,28 +1,86 @@
-*{
-    margin: 0px;
-    padding: 0px;
-}
+@charset "UTF-8";
+/* VARIABLES NOS A PERMITIR ESTANDARIZAR LOS COLORES Y LOS TAMAÑOS */
+* {
+  margin: 0px;
+  padding: 0px; }
 
 .nav__color {
-    background-color: rgb(69, 154, 239);
-}
+  background-color: #459aef; }
 
 .carousel__alto {
-    height: 500px;
-}
+  height: 500px; }
 
 .color__letra {
-    color: black;
-}
+  color: black; }
 
 .background {
-    background-color: aquamarine;
-}
+  background-color: aquamarine; }
 
 .background__dos {
-    background-color: rgb(153, 127, 255);
-}
+  background-color: #997fff; }
 
 .text {
-    font-size: 60px;
-}
+  font-size: 60px; }
+
+/* EJEMPLO DE MEDIAQUERIA USANDO FLEXBOX */
+header {
+  background-color: #459aef; }
+  header .header__icon {
+    width: 50px;
+    height: 50px; }
+  header .header__nav {
+    display: flex; }
+  header .header__lista {
+    display: flex; }
+
+ul {
+  list-style: none;
+  color: white; }
+  ul li {
+    padding: 10px; }
+    ul li::before {
+      content: " ";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-bottom: 2px solid orange; }
+    ul li:hover::before {
+      content: " ";
+      display: block;
+      width: 100%;
+      height: 10px;
+      border-bottom: 2px solid orange;
+      transition: all 2s; }
+
+a:hover {
+  font-size: 16px;
+  color: lime; }
+
+/* div:not(.padre) {
+    background-color: blueviolet;
+    margin-bottom: 15px;
+    padding: 15px;
+    color: white;
+} */
+section div:nth-child(2) {
+  background-color: #de9fec; }
+
+div::first-letter {
+  font-size: 40px;
+  color: brown; }
+
+.first-line::first-line {
+  background-color: aquamarine; }
+
+/* BREAKPOINT DE BOOSTRAP */
+/* MEDIA PARA CELULAR */
+@media (min-width: 320px) and (max-width: 576px) {
+  .header__nav {
+    flex-direction: column; }
+  .header__lista {
+    flex-direction: column; } }
+
+/* PARA TABLET */
+@media (min-width: 577px) and (max-width: 991px) {
+  .header__lista {
+    flex-wrap: wrap; } }
